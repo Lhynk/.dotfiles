@@ -15,7 +15,7 @@ local options = {
 	splitbelow = true,												-- force all horizontal splits to go below active window
 	splitright = true,												-- force all vertical splits to go the right of active window
 	swapfile = false,													-- doesn't creates a swap file
-	timeoutlen = 1000,												-- time to wait for a mapped sequence to complete
+	timeoutlen = 500,												-- time to wait for a mapped sequence to complete
 	updatetime = 300,													-- faster completion
 	writebackup = false,											-- search help for this
 	expandtab = true,													-- convert tabs to spaces
@@ -39,5 +39,5 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd "set whichwrap+=<,>,[,]"
 vim.cmd [[set iskeyword+=-]]

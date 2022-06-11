@@ -38,60 +38,44 @@ packer.init {
   },
 }
 
--- Install your plugins here
-return packer.startup(function(use)
-  -- General Plugins
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+-- Plugins
+return packer.startup(function()
+  use "wbthomason/packer.nvim" -- Packer can manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs
-  use "akinsho/toggleterm.nvim"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use {
-    'nvim-lualine/lualine.nvim',
-    require = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use "folke/which-key.nvim"
+  use {"akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons"} -- Add buffer tabs
+  use {"nvim-lualine/lualine.nvim", require = { "kyazdani42/nvim-web-devicons", opt = true }} -- Add the lua line
+  use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons"}} -- Nvim Tree explorer
+  use "numToStr/Comment.nvim"
+  use "tpope/vim-surround"
 
   -- Colorschemes
-  use 'folke/tokyonight.nvim'
+  use "sainnhe/gruvbox-material"
 
-  -- CMP Plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  -- LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
+  use "jose-elias-alvarez/null-ls.nvim"
+
+  -- CMP
+  use "hrsh7th/nvim-cmp" -- Engine
+  use "L3MON4D3/LuaSnip" -- Snippet engine
+  use "rafamadriz/friendly-snippets" -- Snippet list
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lsp" -- LSP capabilities
+  use "hrsh7th/cmp-path" -- Path completions
+  use "hrsh7th/cmp-buffer" -- buffer values completions
 
- -- Snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-
-   -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
-
-   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+  -- Telescope
+  use {"nvim-telescope/telescope.nvim", require = { {"nvim-lua/plenary.nvim"}}
   }
 
-  -- NvimTree
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-    },
-  }
+  -- Treesitter
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use "p00f/nvim-ts-rainbow"
+  use "windwp/nvim-ts-autotag"
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

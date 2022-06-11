@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.dotnet/tools:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,9 +31,26 @@ alias autoremove="sudo apt autoremove"
 alias zshConfig="nvim ~/.zshrc"
 alias nvimDir="cd ~/.config/nvim"
 alias nvimConfig="nvim ~/.config/nvim/init.lua"
+alias tmuxConfig="nvim ~/.tmux.conf"
+alias zshReload="source ~/.zshrc"
+
+# Tmux
+alias t="tmux"
+alias ta="t a"
+alias tan="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+
+# Yarn
+alias ya="yarn add"
+alias yad="yarn add -D"
+alias yr="yarn remove"
 
 # Runners
 alias vite="npm create vite@latest"
+alias cra="npx create-react-app"
+alias tailwindInstall="npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
+alias falias="alias | fzf"
 
 # FUNCTIONS
 function terminalTheme() {
@@ -40,8 +58,8 @@ function terminalTheme() {
 }
 
 function dev() {
-    cd ~/Development
     clear
+    cd ~/Development
 }
 
 function home() {
@@ -55,3 +73,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_COMMAND="fdfind --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

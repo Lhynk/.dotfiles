@@ -6,30 +6,15 @@ end
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
   return
-end 
+end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   disable_netrw = true,
-  open_on_setup = true,
-  auto_close = true,
-  diagnostics = {
-    enable = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
-  },
+  open_on_setup = false,
+  hijack_unnamed_buffer_when_opening = true,
   view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
-    side = 'left',
-    auto_resize = false,
-    preserve_window_proportions = false,
-    signcolumn = "yes",
+    side = "right",
     mappings = {
       custom_only = false,
       list = {
@@ -39,17 +24,9 @@ nvim_tree.setup {
       },
     },
   },
-  trash = {
-    cmd = "trash",
-    require_confirm = true
-  },
   actions = {
-    change_dir = {
-      enable = true,
-      global = false,
-    },
     open_file = {
-      quit_on_open = true,
+      quit_on_open = true
     }
-  }
+  },
 }
