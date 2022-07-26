@@ -44,7 +44,7 @@ return packer.startup(function()
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs
   use "folke/which-key.nvim"
-  use {"akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons"} -- Add buffer tabs
+  -- use {"akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons"} -- Add buffer tabs
   use {"nvim-lualine/lualine.nvim", require = { "kyazdani42/nvim-web-devicons", opt = true }} -- Add the lua line
   use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons"}} -- Nvim Tree explorer
   use "numToStr/Comment.nvim"

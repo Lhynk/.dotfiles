@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "<A-q>", ":q<CR>", opts)
 
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -37,7 +37,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers (tabs)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>bc", ":bd<CR>", opts)
+keymap("n", "<leader>q", ":bd<CR>", opts)
 keymap("n", "<leader>bae", ":%bd|e#|bd#<CR>", opts)
 keymap("n", "<leader>bad", ":%bd|bd#<CR>", opts)
 --keymap("n", "<leader>bl", ":BufferLinePick<CR>", opts)

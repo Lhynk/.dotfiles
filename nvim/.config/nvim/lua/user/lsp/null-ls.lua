@@ -12,12 +12,4 @@
       formatting.prettier.with { extra_args = {"--single-quote", "--jsx-single-quote"} },
       diagnostics.eslint
     },
---    on_attach = function(client)
---     vim.cmd [[
---      augroup LspFormat
---        autocmd! * <buffer>
---        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil,10000)
---      augroup END
---      ]]
---    end
   })

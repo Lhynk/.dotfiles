@@ -14,7 +14,7 @@ nvim_tree.setup {
   open_on_setup = false,
   hijack_unnamed_buffer_when_opening = true,
   view = {
-    side = "right",
+    side = "left",
     mappings = {
       custom_only = false,
       list = {

@@ -15,9 +15,9 @@ lualine.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {'buffers'},
     lualine_x = {'filetype'},
-    lualine_y = {'progress'},
+    lualine_y = {'filename'},
     lualine_z = {'location'}
   },
   inactive_sections = {

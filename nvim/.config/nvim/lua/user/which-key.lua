@@ -96,7 +96,7 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files"
   },
-  ["q"] = { "<cmd>:q<cr>", "Exit" },
+  -- ["q"] = { "<cmd>:q<cr>", "Exit" },
   ["w"] = { "<cmd>:w<cr>", "Save" },
   ["d"] = {
     name = "Documents",
