@@ -21,11 +21,11 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIASES
 
-# APT
-alias install="sudo apt install"
-alias remove="sudo apt remove"
-alias update="sudo apt update"
-alias autoremove="sudo apt autoremove"
+# DNF
+alias install="sudo dnf install"
+alias remove="sudo dnf remove"
+alias update="sudo dnf upgrade"
+alias autoremove="sudo dnf autoremove"
 
 # CONFIG FILES
 alias zshConfig="nvim ~/.zshrc"
@@ -51,6 +51,11 @@ alias vite="npm create vite@latest"
 alias cra="npx create-react-app"
 alias tailwindInstall="npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
 alias falias="alias | fzf"
+
+# NPM
+alias ni="npm install"
+alias nid="npm install --dev"
+alias nig="npm install -g"
 
 # FUNCTIONS
 function terminalTheme() {
