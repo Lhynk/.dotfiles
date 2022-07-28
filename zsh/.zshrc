@@ -29,22 +29,13 @@ alias autoremove="sudo dnf autoremove"
 
 # CONFIG FILES
 alias zshConfig="nvim ~/.zshrc"
+alias zshReload="source ~/.zshrc"
 alias nvimDir="cd ~/.config/nvim"
 alias nvimConfig="nvim ~/.config/nvim/init.lua"
 alias tmuxConfig="nvim ~/.tmux.conf"
-alias zshReload="source ~/.zshrc"
-
-# Tmux
-alias t="tmux"
-alias ta="t a"
-alias tan="t a -t"
-alias tls="t ls"
-alias tn="t new -t"
-
-# Yarn
-alias ya="yarn add"
-alias yad="yarn add -D"
-alias yr="yarn remove"
+alias bspConfig="nvim ~/.config/bspwm/bspwmrc"
+alias sxhkdConfig="nvim ~/.config/sxhkd/sxhkdrc"
+alias kittyConfig="nvim ~/.config/kitty/kitty.conf"
 
 # Runners
 alias vite="npm create vite@latest"
@@ -56,6 +47,7 @@ alias falias="alias | fzf"
 alias ni="npm install"
 alias nid="npm install --dev"
 alias nig="npm install -g"
+alias nr="npm run"
 
 # FUNCTIONS
 function terminalTheme() {
