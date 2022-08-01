@@ -36,6 +36,9 @@ alias tmuxConfig="nvim ~/.tmux.conf"
 alias bspConfig="nvim ~/.config/bspwm/bspwmrc"
 alias sxhkdConfig="nvim ~/.config/sxhkd/sxhkdrc"
 alias kittyConfig="nvim ~/.config/kitty/kitty.conf"
+alias polybarConfig="nvim ~/.config/polybar/config.ini"
+alias picomConfig="nvim ~/.config/picom/picom.conf"
+alias i3Config="nvim ~/.config/i3/config"
 
 # Runners
 alias vite="npm create vite@latest"

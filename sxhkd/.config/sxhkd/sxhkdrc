@@ -8,7 +8,7 @@ super + r
 
 # Open explorer
 super + e
-  thunar
+  nautilus
 
 # Reload sxhkd configuration
 super + Escape
@@ -18,9 +18,20 @@ super + Escape
 super + alt + {q,r}
 	bspc {quit, wm -r}
 
-
-#[FOCUS/SWAP]
+super + {_,shift +}w
+  bspc node -{c,k}
 
 # focus node
 super + {_,shift +}{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
+
+# changes desktop
+super + {1,2,3,4,5}
+  bspc desktop -f {1,2,3,4,5}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
+
+alt +m ; shift + {1-2} ; {1-5}
+  bspc node -d ^{1-2}:^{1-5}
