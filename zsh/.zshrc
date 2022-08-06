@@ -29,7 +29,6 @@ alias autoremove="sudo dnf autoremove"
 
 # CONFIG FILES
 alias zshConfig="nvim ~/.zshrc"
-alias zshReload="source ~/.zshrc"
 alias nvimDir="cd ~/.config/nvim"
 alias nvimConfig="nvim ~/.config/nvim/init.lua"
 alias tmuxConfig="nvim ~/.tmux.conf"
@@ -45,6 +44,9 @@ alias vite="npm create vite@latest"
 alias cra="npx create-react-app"
 alias tailwindInstall="npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
 alias falias="alias | fzf"
+
+# MISC
+alias cls="clear"
 
 # NPM
 alias ni="npm install"
@@ -65,6 +67,11 @@ function dev() {
 function home() {
     cd ~
     clear
+}
+
+function reload() {
+  source ~/.zshrc
+  clear
 }
 
 export NVM_DIR="$HOME/.nvm"
