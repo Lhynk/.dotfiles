@@ -91,16 +91,23 @@ local mappings = {
       "List"
     }
   },
-  ["e"] = { "<cmd>NvimTreeFindFileToggle<cr>", "Explorer"},
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files"
+  ["t"] = {
+    name = "Tabs",
+    s = {
+      name ="Save options",
+      a = {"<cmd>:wa<cr>", "Save all tabs"}
+    }
   },
+  ["e"] = { "<cmd>NvimTreeFindFileToggle<cr>", "Explorer"},
+  -- ["f"] = {
+  --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  --   "Find files"
+  -- },
   -- ["q"] = { "<cmd>:q<cr>", "Exit" },
   ["w"] = { "<cmd>:w<cr>", "Save" },
   ["d"] = {
     name = "Documents",
-    f = { "<cmd>:Format<cr>", "Format"}
+    f = { "<cmd>:Prettier<cr>", "Format"}
   },
   ["g"] = {
     name = "Git",

@@ -29,7 +29,7 @@ local options = {
 	wrap = false,															-- display lines as one long line
 	scrolloff = 8,														-- keep showing 8 lines before the end of the view
 	sidescrolloff = 8,												-- same as above just on side scrolling
-	guifont = "monospace:h17",								-- font for graphical neovim applications
+	-- guifont = "monospace:h17",								-- font for graphical neovim applications
   termguicolors = true                      -- active terminal gui colors
 }
 

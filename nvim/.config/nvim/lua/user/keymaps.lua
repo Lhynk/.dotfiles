@@ -1,79 +1,74 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
--- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
--- Space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
--- Modes
---    Normal = "n",
---    Insert = "i",
---    Visual = "v",
---    Visual Block = "x"
---    Term = "t"
---    Command = "c"
+keymap('', '<Space>', '<Nop>', opts)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Normal --
-keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<A-q>", ":q<CR>", opts)
+keymap('n', '<leader>w', ':w<CR>', opts)
+keymap('n', '<leader>q', ':q<CR>', opts)
+keymap('n', '<A-q>', ':qa<CR>', opts)
+keymap('n', 'x', '"_x', opts)      -- Don't yank with x'
+keymap('n', 'dw', 'vb"_d', opts)
 
 -- Window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-k>', '<C-w>k', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
 
--- Reize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Tabs
+keymap('n', 'te', ':tabedit<cr>', opts)
 
--- Navigate buffers (tabs)
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>q", ":bd<CR>", opts)
-keymap("n", "<leader>bae", ":%bd|e#|bd#<CR>", opts)
-keymap("n", "<leader>bad", ":%bd|bd#<CR>", opts)
---keymap("n", "<leader>bl", ":BufferLinePick<CR>", opts)
+-- Navigate tabs
+-- keymap('n', '<S-l>', ':tabnext<CR>', opts)
+-- keymap('n', '<S-h>', ':tabprevious<CR>', optsl
+-- keymap('n', '<leader>q', ':tabclose<CR>', opts)
+-- keymap('n', '<leader>tsa', ':wa', opts)
 
--- Quick lists
-keymap("n", ",wqc", ":cclose<CR>", opts)
-
+-- keymap('n', '<S-l>', ':bnext<CR>', opts)
+-- keymap('n', '<S-h>', ':bprevious<CR>', opts)
+-- keymap('n', '<leader>q', ':bd<CR>', opts)
+-- keymap('n', '<leader>bae', ':%bd|e#|bd#<CR>', opts)
+-- keymap('n', '<leader>bad', ':%bd|bd#<CR>', opts)
+-- keymap('n', '<leader>bwa', ':wa<CR>', opts)
+-- keymap('n', '<leader>bl', ':BufferLinePick<CR>', opts)
 
 -- Insert --
 -- jk to return Normal mode
-keymap("i", "jk", "<ESC>", opts)
+keymap('i', 'jk', '<ESC>', opts)
 
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", ">", "<gv", opts)
-keymap("v", "<", ">gv", opts)
+keymap('v', '>', '<gv', opts)
+keymap('v', '<', '>gv', opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .--2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
-
+keymap('v', '<A-j>', ':m .+1<CR>==', opts)
+keymap('v', '<A-k>', ':m .--2<CR>==', opts)
+keymap('v', 'p', '"_dP', opts)
 
 -- Visual Block --
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap('x', 'J', ':move ">+1<CR>gv-gv', opts)
+keymap('x', 'K', ':move "<-2<CR>gv-gv', opts)
+keymap('x', '<A-j>', ':move ">+1<CR>gv-gv', opts)
+keymap('x', '<A-k>', ':move "<-2<CR>gv-gv', opts)
 
 -- Telescope --
-keymap("n", "<leader>f", "<cmd> lua require'telescope.builtin'.find_files()<cr>", opts)
+keymap('n', '<leader>ff', '<cmd> lua require"telescope.builtin".find_files()<cr>', opts)
+keymap('n', '<leader>fb', '<cmd> lua require"telescope.builtin".buffers({initial_mode="normal"})<cr>', opts)
+keymap('n', '<leader>fs', '<cmd> lua require"telescope.builtin".current_buffer_fuzzy_find()<cr>', opts)
+keymap('n', 'gl', '<cmd> lua require"telescope.builtin".diagnostics({bufnr=0,initial_mode="normal"})<cr>', opts)
 
--- NvimTree --
-keymap("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)
-keymap("n", "<F5>", ":NvimTreeToggle<CR>", opts)
+-- NvimTree --:
+keymap('n', '<leader>b', ':NvimTreeFindFileToggle<CR>', opts)
 
 -- Formatting
-keymap("n", "<leader>df", ":Format<CR>", opts)
+keymap('n', '<leader>df', ':Prettier<CR>', opts)
+
+-- BarBar 
+keymap('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', opts)
+keymap('n', '<s-tab>', '<cmd>BufferLineCyclePrev<cr>', opts)

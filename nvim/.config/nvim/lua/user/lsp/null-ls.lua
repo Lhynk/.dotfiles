@@ -9,14 +9,17 @@
   null_ls.setup({
     debug= true,
     sources = {
-      formatting.prettier.with { extra_args = {"--single-quote", "--jsx-single-quote"} },
+      null_ls.builtins.diagnostics.eslint_d.with({
+        diagnostics_format = '[eslint] #{m}\n(#{c})'
+      }),
+      formatting.prettier.with { extra_args = {"--single-quote", "--jsx-single-quote", "--tsx-single-quote"} },
       diagnostics.eslint
     },
     on_attach = function(client)
     vim.cmd [[
      augroup LspFormat
        autocmd! * <buffer>
-       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil,10000)
+       autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
      augroup END
      ]]
    end

@@ -22,15 +22,15 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 
 # DNF
-alias install="sudo dnf install"
-alias remove="sudo dnf remove"
-alias update="sudo dnf upgrade"
-alias autoremove="sudo dnf autoremove"
+alias install="sudo apt install"
+alias remove="sudo apt remove"
+alias update="sudo apt update && pkcon update"
+alias autoremove="sudo apt autoremove"
 
 # CONFIG FILES
 alias zshConfig="nvim ~/.zshrc"
 alias nvimDir="cd ~/.config/nvim"
-alias nvimConfig="nvim ~/.config/nvim/init.lua"
+alias nvimConfig="nvimConfig"
 alias tmuxConfig="nvim ~/.tmux.conf"
 alias bspConfig="nvim ~/.config/bspwm/bspwmrc"
 alias sxhkdConfig="nvim ~/.config/sxhkd/sxhkdrc"
@@ -38,6 +38,7 @@ alias kittyConfig="nvim ~/.config/kitty/kitty.conf"
 alias polybarConfig="nvim ~/.config/polybar/config.ini"
 alias picomConfig="nvim ~/.config/picom/picom.conf"
 alias i3Config="nvim ~/.config/i3/config"
+alias i3StatusConfig="nvim ~/.config/i3status/config"
 
 # Runners
 alias vite="npm create vite@latest"
@@ -72,6 +73,12 @@ function home() {
 function reload() {
   source ~/.zshrc
   clear
+}
+
+function nvimConfig() {
+  nvimDir
+  nvim .
+  home
 }
 
 export NVM_DIR="$HOME/.nvm"

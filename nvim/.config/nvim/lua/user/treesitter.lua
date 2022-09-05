@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup { 
-  ensure_installed = { "lua", "typescript", "javascript", "html", "json", "tsx" },
+  ensure_installed = { "lua", "typescript", "javascript", "html", "json", "tsx", "http" },
   sync_install = false,
   autopairs = {
     enable = true
