@@ -19,16 +19,16 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # PLUGINS
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # ALIASES
 
 # DNF
-alias install="sudo pacman -S"
-alias remove="sudo pacman -Rs"
-alias update="sudo pacman -Suy"
+alias install="sudo dnf install"
+alias remove="sudo dnf remove"
+alias update="sudo dnf update"
 alias autoremove="sudo apt autoremove"
 
 # CONFIG FILES
@@ -56,7 +56,7 @@ alias cls="clear"
 # NPM
 alias ni="pnpm install"
 alias nid="pnpm install --dev"
-alias nig="npm install -g"
+alias nig="pnpm add -g"
 alias nr="npm run"
 
 # FUNCTIONS
