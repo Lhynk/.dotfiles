@@ -8,6 +8,10 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 
+# export PNPM
+export PNPM_HOME="~/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -22,9 +26,9 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 
 # DNF
-alias install="sudo apt install"
-alias remove="sudo apt remove"
-alias update="sudo apt update && pkcon update"
+alias install="sudo pacman -S"
+alias remove="sudo pacman -Rs"
+alias update="sudo pacman -Suy"
 alias autoremove="sudo apt autoremove"
 
 # CONFIG FILES
@@ -50,8 +54,8 @@ alias falias="alias | fzf"
 alias cls="clear"
 
 # NPM
-alias ni="npm install"
-alias nid="npm install --dev"
+alias ni="pnpm install"
+alias nid="pnpm install --dev"
 alias nig="npm install -g"
 alias nr="npm run"
 
@@ -93,3 +97,8 @@ export NVM_DIR="$HOME/.nvm"
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fdfind --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# pnpm
+export PNPM_HOME="/home/lhynk/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
