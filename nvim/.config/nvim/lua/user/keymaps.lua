@@ -69,7 +69,7 @@ keymap('n', 'gl', '<cmd> lua require"telescope.builtin".diagnostics({bufnr=0,ini
 keymap('n', '<leader>b', ':NvimTreeFindFileToggle<CR>', opts)
 
 -- Formatting
-keymap('n', '<leader>df', ':Prettier<CR>', opts)
+keymap('n', '<leader>df', ':Format<CR>', opts)
 
 -- BarBar 
 keymap('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', opts)
