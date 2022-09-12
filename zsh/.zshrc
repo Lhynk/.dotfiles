@@ -12,6 +12,9 @@ export PATH=$HOME/.dotnet/tools:$PATH
 export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# export Cargo
+export PATH=$HOME/.cargo/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -49,13 +52,17 @@ alias vite="npm create vite@latest"
 alias cra="npx create-react-app"
 alias tailwindInstall="npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
 alias falias="alias | fzf"
+alias eslintInstall="nid eslint && npx eslint --init"
+alias eslintInstallTypescriptReact="nid eslint-plugin-import @typescript-eslint/parser eslint-import-resolver-typescript prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks && touch .prettierrc"
+
 
 # MISC
 alias cls="clear"
 
 # NPM
 alias ni="pnpm install"
-alias nid="pnpm install --dev"
+alias na="pnpm add"
+alias nid="pnpm add -D"
 alias nig="pnpm add -g"
 alias nr="npm run"
 
@@ -98,7 +105,7 @@ export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fdfind --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# pnpm
+# pnpm global installs
 export PNPM_HOME="/home/lhynk/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
