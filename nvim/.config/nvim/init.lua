@@ -1,17 +1,17 @@
-require "user.options"
-require "user.plugins"
-require "user.nightfox"
-require "user.colorscheme"
-require "user.keymaps"
-require "user.telescope"
-require "user.treesitter"
-require "user.lsp"
-require "user.cmp"
-require "user.lualine"
-require "user.nvim-tree"
-require "user.comment"
-require "user.autopairs"
-require "user.term"
-require "user.prettier"
-require "user.lspsaga"
-require "user.barbar"
+require("user.options")
+require("user.plugins")
+require("user.nightfox")
+require("user.colorscheme")
+require("user.keymaps")
+require("user.telescope")
+require("user.treesitter")
+require("user.lsp")
+require("user.cmp")
+require("user.lualine")
+require("user.nvim-tree")
+require("user.comment")
+require("user.autopairs")
+require("user.term")
+require("user.prettier")
+require("user.lspsaga")
+require("user.barbar")
