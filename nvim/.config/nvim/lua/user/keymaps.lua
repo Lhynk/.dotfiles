@@ -63,7 +63,7 @@ keymap("n", "<leader>ff", '<cmd> lua require"telescope.builtin".find_files()<cr>
 keymap("n", "<leader>fb", '<cmd> lua require"telescope.builtin".buffers({initial_mode="normal"})<cr>', opts)
 keymap("n", "<leader>fs", '<cmd> lua require"telescope.builtin".current_buffer_fuzzy_find()<cr>', opts)
 keymap("n", "<leader>fw", '<cmd> lua require"telescope.builtin".live_grep()<cr>', opts)
-keymap("n", "<leader>e", ":Telescope file_browser<cr>", opts)
+keymap("n", "<leader>e", ":Telescope file_browser path=%:p:h initial_mode=normal<cr>", opts)
 keymap("n", "gl", '<cmd> lua require"telescope.builtin".diagnostics({bufnr=0,initial_mode="normal"})<cr>', opts)
 
 -- NvimTree --:

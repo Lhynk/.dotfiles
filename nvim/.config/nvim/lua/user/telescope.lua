@@ -65,7 +65,7 @@ telescope.setup{
 }
 
 telescope.load_extension('file_browser')
-telescope.load_extension("fzf")
+--telescope.load_extension("fzf")
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')

@@ -11,7 +11,7 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote", "--tsx-single-quote" } }),
 		formatting.stylua,
-		diagnostics.eslint_d,
+		diagnostics.eslint,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
