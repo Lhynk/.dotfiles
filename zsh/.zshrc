@@ -8,6 +8,9 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 
+# export local bin
+export PATH=$HOME/.local/share/bin/:$PATH
+
 # export PNPM
 export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -29,9 +32,9 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 
 # DNF
-alias install="sudo dnf install"
-alias remove="sudo dnf remove"
-alias update="sudo dnf update"
+alias install="sudo apt install"
+alias remove="sudo apt remove"
+alias update="sudo apt update"
 alias autoremove="sudo apt autoremove"
 
 # CONFIG FILES
@@ -48,13 +51,15 @@ alias i3Config="nvim ~/.config/i3/config"
 alias i3StatusConfig="nvim ~/.config/i3status/config"
 
 # Runners
-alias vite="npm create vite@latest"
+alias vite="pnpm create vite"
 alias cra="npx create-react-app"
 alias tailwindInstall="npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p"
 alias falias="alias | fzf"
 alias eslintInstall="nid eslint && npx eslint --init"
 alias eslintInstallTypescriptReact="nid eslint-plugin-import @typescript-eslint/parser eslint-import-resolver-typescript prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks && touch .prettierrc"
 
+# Tmux
+alias tn="tmux new"
 
 # MISC
 alias cls="clear"
@@ -64,7 +69,7 @@ alias ni="pnpm install"
 alias na="pnpm add"
 alias nid="pnpm add -D"
 alias nig="pnpm add -g"
-alias nr="npm run"
+alias nr="pnpm"
 
 # FUNCTIONS
 function terminalTheme() {
@@ -109,3 +114,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PNPM_HOME="/home/lhynk/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# pnpm
+export PNPM_HOME="/home/lhynk/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
