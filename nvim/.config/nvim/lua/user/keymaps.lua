@@ -9,7 +9,7 @@ vim.g.maplocalleader = " "
 -- Normal --
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
-keymap("n", "<A-q>", ":qa<CR>", opts)
+keymap("n", "<A-q>", ":qa!<CR>", opts)
 keymap("n", "x", '"_x', opts) -- Don't yank with x'
 keymap("n", "dw", 'vb"_d', opts)
 

@@ -2,6 +2,7 @@ local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return
 end
+local provider = require("core.utils").provider
 
 local icons = {
 	c_left_separator = "",
@@ -23,7 +24,7 @@ lualine.setup({
 		lualine_a = { "mode" },
 		lualine_b = { "branch" },
 		lualine_c = { { "filename", file_status = true, path = 0 } },
-		lualine_x = { { "diagnostics", soruce = { "nvim_diagnostic" } }, "filetype" },
+		lualine_x = { provider.lsp_progress, { "diagnostics", source = { "nvim_diagnostic" } }, "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},

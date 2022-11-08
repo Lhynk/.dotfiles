@@ -55,6 +55,7 @@ return packer.startup(function()
 			require("colorizer").setup()
 		end,
 	})
+	use("lewis6991/impatient.nvim")
 
 	use("junegunn/fzf.vim")
 	use({

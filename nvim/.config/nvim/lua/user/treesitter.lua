@@ -15,11 +15,11 @@ configs.setup({
 	indent = {
 		enable = true,
 	},
-	-- rainbow = {
-	--   enable = true,
-	--   extended_mode = true
-	-- },
-	autotag = {
+	rainbow = {
 		enable = true,
+		disable = { "html" },
+		extended_mode = false,
 	},
+	autopairs = { enable = true },
+	autotag = { enable = true },
 })
