@@ -18,6 +18,9 @@ export PATH="$PNPM_HOME:$PATH"
 # export Cargo
 export PATH=$HOME/.cargo/bin:$PATH
 
+# export LunarVIm
+export PATH=$HOME/.local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -30,6 +33,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # ALIASES
+alias nvim=lvim
 
 # DNF
 alias install="sudo apt install"
@@ -64,11 +68,11 @@ alias tn="tmux new"
 # MISC
 alias cls="clear"
 
-# NPM
+# PNPM
 alias ni="pnpm install"
 alias na="pnpm add"
-alias nid="pnpm add -D"
-alias nig="pnpm add -g"
+alias nad="pnpm add -D"
+alias nag="pnpm add -g"
 alias nr="pnpm"
 
 # FUNCTIONS
